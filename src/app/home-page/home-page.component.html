@@ -1,0 +1,45 @@
+<div id="section1">
+  <div id="container">
+      <div id="header">
+        <h1>To Do List</h1>
+
+        <div id="actions">
+          <button mat-icon-button matTooltip="Click here to search"><mat-icon>search</mat-icon></button>
+          <button mat-icon-button   [disabled]='selectedTasks.length<1'><mat-icon>delete</mat-icon></button>
+          <button id="createTaskButton" mat-raised-button color="primary">Create Task</button>
+        </div>
+      </div>
+
+      <div id="content">
+        <mat-card>
+            <mat-card-content>
+              <div id="cardHeader">
+                <div id="categories">
+                   <button
+                   (click)="openCategory(category)"
+                   class="category" *ngFor="let category of categories"
+                   [ngClass]="{'active': category.active}"
+                   mat-button>{{category.title}}</button>
+
+                </div>
+                <div id="cardActions"></div>
+              </div>
+              <div id="cardContent">
+                  <mat-list [(ngModel)]="selectedTasks">
+                      <mat-list-item>Meet Client</mat-list-item>
+                      <mat-list-item>Following up meeting</mat-list-item>
+                      <mat-list-item>Meet Client</mat-list-item>
+                      <mat-list-item>Following up meeting</mat-list-item>
+                      <mat-list-item>Meet Client</mat-list-item>
+                      <mat-list-item>Following up meeting</mat-list-item>
+                      <mat-list-item>Meet Client</mat-list-item>
+                      <mat-list-item>Following up meeting</mat-list-item>
+                      <mat-list-item>Meet Client</mat-list-item>
+                      <mat-list-item>Following up meeting</mat-list-item>
+                    </mat-list>
+              </div>
+            </mat-card-content>
+         </mat-card>
+      </div>
+  </div>
+</div>>
