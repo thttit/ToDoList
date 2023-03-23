@@ -1,45 +1,131 @@
 <div id="section1">
   <div id="container">
-      <div id="header">
-        <h1>To Do List</h1>
+    <div id="header">
+      <h1>To Do List</h1>
 
-        <div id="actions">
-          <button mat-icon-button matTooltip="Click here to search"><mat-icon>search</mat-icon></button>
-          <button mat-icon-button   [disabled]='selectedTasks.length<1'><mat-icon>delete</mat-icon></button>
-          <button id="createTaskButton" mat-raised-button color="primary">Create Task</button>
-        </div>
+      <div id="actions">
+        <button mat-icon-button matTooltip="Click here to search">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button mat-icon-button [disabled]="selectedTasks.length < 1">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button id="createTaskButton" mat-raised-button color="primary">
+          Create Task
+        </button>
       </div>
+    </div>
 
-      <div id="content">
-        <mat-card>
-            <mat-card-content>
-              <div id="cardHeader">
-                <div id="categories">
-                   <button
-                   (click)="openCategory(category)"
-                   class="category" *ngFor="let category of categories"
-                   [ngClass]="{'active': category.active}"
-                   mat-button>{{category.title}}</button>
+    <div id="content">
+      <mat-card>
+        <mat-card-content>
+          <div id="cardHeader">
+            <div id="categories">
+              <button
+                (click)="openCategory(category)"
+                class="category"
+                *ngFor="let category of categories"
+                [ngClass]="{ active: category.active }"
+                mat-button
+              >
+                {{ category.title }}
+              </button>
+            </div>
+            <div id="cardActions"></div>
+          </div>
+          <div class="scrollable" ui-shared-state="searchBar">
+            <input
+              ng-if="Ui.active('searchBar')"
+              type="search"
+              class="form-control scrollable-header"
+              placeholder="Search.."
+            />
 
-                </div>
-                <div id="cardActions"></div>
-              </div>
-              <div id="cardContent">
-                  <mat-list [(ngModel)]="selectedTasks">
-                      <mat-list-item>Meet Client</mat-list-item>
-                      <mat-list-item>Following up meeting</mat-list-item>
-                      <mat-list-item>Meet Client</mat-list-item>
-                      <mat-list-item>Following up meeting</mat-list-item>
-                      <mat-list-item>Meet Client</mat-list-item>
-                      <mat-list-item>Following up meeting</mat-list-item>
-                      <mat-list-item>Meet Client</mat-list-item>
-                      <mat-list-item>Following up meeting</mat-list-item>
-                      <mat-list-item>Meet Client</mat-list-item>
-                      <mat-list-item>Following up meeting</mat-list-item>
-                    </mat-list>
-              </div>
-            </mat-card-content>
-         </mat-card>
-      </div>
+            <div id="scrollable-content" ui-scroll-bottom="bottomReached()">
+                <mat-list [(ngModel)]="selectedTasks">
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Meet Client
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Deadline 23/3/2023
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>This is the primary content of the panel.</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Following up meeting
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Deadline 23/3/2023
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>This is the primary content of the panel.</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Code Mobile Project
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Deadline 23/3/2023
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>This is the primary content of the panel.</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Design Websites
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Deadline 23/3/2023
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>This is the primary content of the panel.</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Design Websites
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Deadline 23/3/2023
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>This is the primary content of the panel.</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Design Websites
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Deadline 23/3/2023
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>This is the primary content of the panel.</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Design Websites
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Deadline 23/3/2023
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>This is the primary content of the panel.</p>
+                  </mat-expansion-panel>
+                </mat-list>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
-</div>>
+</div>
+>
